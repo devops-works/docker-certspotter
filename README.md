@@ -22,12 +22,12 @@ docker run -d --name certspotter \
 
 #### Environment variables
 
-| Variable     | Description                                  | Default           |
-| ------------ | -------------------------------------------- | ----------------- |
-| CS_DELAY     | Interval between `certspotter` runs          | 86400 (1 day)     |
-| CS_DOMAINS   | Domains to watch for                         | none (compulsory) |
-| CS_SLACK_URL | Slack URL for notifications                  | none              |
-| CS_DEBUG     | Sets `certspotter` & scripts in verbose mode | ""                |
+| Variable       | Description                                  | Default           |
+| -------------- | -------------------------------------------- | ----------------- |
+| `CS_DELAY`     | Interval between `certspotter` runs          | 86400 (1 day)     |
+| `CS_DOMAINS`   | Domains to watch for                         | none (compulsory) |
+| `CS_SLACK_URL` | Slack URL for notifications                  | none              |
+| `CS_DEBUG`     | Sets `certspotter` & scripts in verbose mode | ""                |
 
 ### Additionnal notification hooks
 
@@ -66,6 +66,7 @@ docker build . -t some/tag
 
 ## Caveats
 
-`DNS_DOMAINS` and `-script` are not used since I could not make them work.
-Debugging required...
+`DNS_DOMAINS` and `-script` are not used since I could not make them work using
+docker. Debugging required...
 
+## Licence
