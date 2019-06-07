@@ -22,7 +22,10 @@ if [ -z "${CS_DOMAINS}" ]; then
   exit 1
 fi
 
-notify.sh "Certspotter starting for domains ${CS_DOMAINS}. Running every ${CS_DELAY} seconds."
+# Notify slack when debug mode is enable
+if [ -n "${CS_DEBUG}" ]; then
+  notify.sh "Certspotter starting for domains ${CS_DOMAINS}. Running every ${CS_DELAY} seconds."
+fi
 
 echo "${CS_DOMAINS}" | tr ' ;,' '\n' > /certspotter/.certspotter/watchlist
 
