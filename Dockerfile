@@ -1,14 +1,14 @@
-ARG GO_VERSION=1.11
+ARG GO_VERSION=1.17
 
 # Go builder
 
 FROM golang:${GO_VERSION} AS builder
 
-RUN go get software.sslmate.com/src/certspotter/cmd/certspotter
+RUN go install software.sslmate.com/src/certspotter/cmd/certspotter@latest
 
 # Final image
 
-FROM debian:stretch
+FROM debian:bullseye
 
 ENV TINI_VERSION v0.18.0
 
