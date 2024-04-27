@@ -11,12 +11,8 @@ if [ -n "${DNS_DOMAINS}" ]; then
   MESSAGE="New certificates found for ${DNS_DOMAINS}"
 fi
 
-for script in /certspotter/base-hooks.d/*; do
-  $script "${MESSAGE}"
-done
-
-if [ -d /certspotter/hooks.d/ ]; then
-  for script in /certspotter/hooks.d/*; do
+if [ -d /certspotter/.certspotter/hooks.d/ ]; then
+  for script in /certspotter/.certspotter/hooks.d/*; do
     $script "${MESSAGE}"
   done
 fi
